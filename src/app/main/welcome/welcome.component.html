@@ -1,0 +1,69 @@
+<div id="welcome" class="wrapper">
+    <div class="page-header page-header-small">
+        <div class="page-header-image rellax-header" data-rellax-speed="-8"
+            style="background-image: url('assets/img/images/welcom-header.jpg');">
+        </div>
+        <div class="container d-flex justify-content-start">
+            <div class="titel-text">
+                <div class="title-header">MEMORIAL DAY SALE!<br> </div>
+                <div class="title-content">BIG WEEKEND! BIG SAVINGS!<br>
+                    OUR LAST SALE FOR A WHILE</div>
+                <!-- <button class="btn btn-round btn-register" type="button">PRE REGISTER</button> -->
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="container">
+            <div id="wrapper">
+                <div id="chart-line">
+                    <apx-chart [series]="chartOptions1.series" [chart]="chartOptions1.chart"
+                        [xaxis]="chartOptions1.xaxis" [dataLabels]="chartOptions1.dataLabels"
+                        [colors]="chartOptions1.colors" [fill]="chartOptions1.fill" [markers]="chartOptions1.markers"
+                        [stroke]="chartOptions1.stroke"></apx-chart>
+                </div>
+                <div id="chart-line2">
+                    <apx-chart [series]="chartOptions2.series" [chart]="chartOptions2.chart"
+                        [xaxis]="chartOptions2.xaxis" [colors]="chartOptions2.colors" [fill]="chartOptions2.fill"
+                        [yaxis]="chartOptions2.yaxis"></apx-chart>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section section-contact-us text-left pt-3 pb-3" *ngFor="let item of optionList">
+        <div class="container">
+            <div class="card border-primary">
+                <div class="card-body">
+                    <div class="pr-5 pl-5 pt-5">
+                        <div class="problem-commit">{{item.date}} <i>madazmoney</i></div>
+                        <div class="font-roboto-thin"><span style="color: rgb(72, 47 ,247);">madazmoney</span>
+                            affectionately known
+                            in the trading community.</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-sm-12 col-md-6">
+                            <img class="problem-img" src='assets/img/images/problem1.jpg'>
+                        </div>
+
+                        <div class="col-12 col-sm-12 col-md-6">
+                            <div>
+                                <apx-chart [series]="item.option.series" [chart]="item.option.chart"
+                                    [dataLabels]="item.option.dataLabels" [plotOptions]="item.option.plotOptions"
+                                    [xaxis]="item.option.xaxis" [yaxis]="item.option.yaxis"
+                                    [annotations]="item.option.annotations">
+                                </apx-chart>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="current-content text-center">
+                        <a href="" class="btn btn-success btn-md btn-round text-center btn-outline" role="button">
+                            <i class="fa fa-share"></i>&nbsp;&nbsp;&nbsp; Share this chart
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>

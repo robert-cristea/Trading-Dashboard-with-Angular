@@ -1,0 +1,92 @@
+<div id="welcome" class="wrapper">
+    <div class="page-header page-header-small">
+        <div class="page-header-image rellax-header" data-rellax-speed="-8"
+            style="background-image: url('assets/img/images/welcom-header.jpg');">
+        </div>
+        <div class="container d-flex justify-content-start">
+            <div class="titel-text">
+                <div class="title-header">MEMORIAL DAY SALE!<br> </div>
+                <div class="title-content">BIG WEEKEND! BIG SAVINGS!<br>
+                    OUR LAST SALE FOR A WHILE</div>
+                <!-- <button class="btn btn-round btn-register" type="button">PRE REGISTER</button> -->
+            </div>
+        </div>
+    </div>
+    <div class="section text-center">
+        <div class="container">
+            <h3 class="title">Edit Your Trades</h3>
+            <h5 class="current-content text-center">
+                Select a date & Add/Edit your trade data
+            </h5>
+            <div class="row">
+                <div class="col-md-6" style="margin: auto">
+                    <div class="datepicker-container">
+                        <div class="form-group">
+                            <input class="form-control datetimepicker" placeholder="06/07/2020" name="dp"
+                                [(ngModel)]="entryDate" ngbDatepicker #d="ngbDatepicker"
+                                (ngModelChange)="onDateSelection($event,'entryDate');" (click)="d.toggle()"
+                                data-color="orange">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-12 col-sm-12 col-lg-8" style="margin: auto;">
+                    <div class="card bg-succes">
+                        <div class="card-body">
+                            <h5 class="card-title row" *ngIf="tickerList != null && tickerList.length != 0">
+                                <div class="col-md-5">Ticker</div>
+                                <div class="col-md-5">Profits</div>
+                                <div class="col-md-2"></div>
+                            </h5>
+                            <div class="row mt-5" *ngIf="tickerList == null || tickerList.length == 0">
+                                <div class="col-sm-12 col-md-12">
+                                    <span>There is no entry for this date.</span>
+                                </div>
+                            </div>
+                            <div class="row" *ngFor="let ticker of tickerList; let i = index">
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        <input type="text" value="" class="form-control"
+                                            [(ngModel)]="ticker.tickerName" />
+                                    </div>
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        <input type="number" value="" class="form-control"
+                                            [(ngModel)]="ticker.profit" />
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-group" style="margin-top: -6px;">
+                                        <button class="btn btn-success btn-icon btn-sm" type="button"
+                                            (click)="removeTicker(i)">
+                                            <i class="fa fa-trash"></i>
+                                        </button>
+                                        <!-- <button class="btn btn-success btn-icon btn-sm" type="button">
+                                            <i class="fa fa-check"></i>
+                                        </button> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-8" style="margin: auto;">
+                                    <button class="btn btn-info btn-rounded" (click)="startNewEntry()">
+                                        <i class="fa fa-plus"></i>
+                                        New Entry Field
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row text-center">
+                <div class="col-md-12 col-sm-12 col-lg-12">
+                    <button class="btn btn-round btn-sm btn-primary" (click)="startTrading()">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

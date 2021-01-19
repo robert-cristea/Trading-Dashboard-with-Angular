@@ -1,0 +1,15 @@
+.header-section{
+    max-width: 1390px !important;
+}
+.header-btn-register{
+    font-size: 17px;
+    background-color: rgb(72, 47 ,247);
+    font-family: 'Roboto';
+    margin: 0 0 6px 30px !important;
+    opacity: 1;
+}
+@media (max-width: 991px) {
+    .header-btn-register{
+        display: none;
+    }
+}

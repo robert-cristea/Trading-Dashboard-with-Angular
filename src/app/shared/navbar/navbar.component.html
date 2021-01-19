@@ -1,0 +1,62 @@
+<nav class="navbar navbar-expand-lg bg-primary fixed-top navbar-transparent" color-on-scroll="500">
+    <div class="container header-section">
+      <!-- <div class="dropdown button-dropdown">
+        <div ngbDropdown>
+          <a class="dropdown-toggle" ngbDropdownToggle>
+              <span class="button-bar"></span>
+              <span class="button-bar"></span>
+              <span class="button-bar"></span>
+          </a>
+           <div ngbDropdownMenu>
+             <a class="dropdown-header">Dropdown header</a>
+             <a class="dropdown-item" href="#">Action</a>
+             <a class="dropdown-item" href="#">Another action</a>
+             <a class="dropdown-item" href="#">Something else here</a>
+             <div class="dropdown-divider"></div>
+             <a class="dropdown-item" href="#">Separated link</a>
+             <div class="dropdown-divider"></div>
+             <a class="dropdown-item" href="#">One more separated link</a>
+           </div>
+         </div>
+      </div> -->
+        <div class="navbar-translate">
+            <img class="read-img" src='assets/img/logo/vector-file.png' (click)="goHome()" style="cursor: pointer">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation" (click)="sidebarToggle()">
+                <span class="navbar-toggler-bar bar1"></span>
+                <span class="navbar-toggler-bar bar2"></span>
+                <span class="navbar-toggler-bar bar3"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" >
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                  <a class="nav-link">
+                      <p>Blogs</p>
+                  </a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link">
+                    <p>Videos</p>
+                  </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link">
+                  <p>Trader Taxes</p>
+                </a>
+              </li> 
+              <li class="nav-item" *ngIf="token.loggedIn() == true">
+                <a class="nav-link" [routerLink]="['/trading']">
+                  <p>Import Trading</p>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div *ngIf="token.loggedIn() != true; else logout">
+            <button class="btn btn-round header-btn-register" type="button" (click)="gotoLogin()">Login</button>
+            <button class="btn btn-round header-btn-register" type="button" (click)="gotoRegister()">Register</button>
+          </div>
+          <ng-template #logout>
+            <button class="btn btn-round header-btn-register" type="button" (click)="token.remove()">Logout</button>
+          </ng-template>
+    </div>
+</nav>

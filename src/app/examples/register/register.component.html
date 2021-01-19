@@ -1,0 +1,77 @@
+
+<div class="page-header" filter-color="orange">
+    <div class="page-header-image" style="background-image:url(assets/img/login.jpg)"></div>
+    <div class="container">
+        <div class="col-md-4 content-center">
+            <div class="card card-login card-plain">
+                <form class="form" method="" action="" #signupForm=ngForm (ngSubmit)="onSubmit()">
+                    <div class="header header-primary text-center">
+                        <div class="logo-container">
+                            <img src="assets/img/now-logo.png" alt="" (click)="gotoHome()" style="cursor: pointer;">
+                        </div>
+                    </div>
+                    <div class="content">
+                      <div class="input-group form-group-no-border input-lg" [ngClass]="{'input-group-focus':focus===true}">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">  <i class="now-ui-icons users_circle-08"></i></span>
+                        </div>
+                          <input type="text" class="form-control" placeholder="Name"  [(ngModel)]="form.name" required standalone="true" name="name"/>
+                          <!-- <div class="alert alert-danger" [hidden]="!error.name">
+                            {{error.name}}
+                          </div> -->
+                      </div>
+                      <div class="input-group form-group-no-border input-lg" [ngClass]="{'input-group-focus':focus1===true}">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="now-ui-icons text_caps-small"></i></span>
+                        </div>
+                          <input type="text" placeholder="Email" class="form-control"   [(ngModel)]="form.email" required standalone="true" name="email"/>
+                          <!-- <div class="alert alert-danger" [hidden]="!error.email">
+                            {{error.email}}
+                          </div> -->
+                      </div>
+                      <div class="input-group form-group-no-border input-lg" [ngClass]="{'input-group-focus':focus1===true}">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="now-ui-icons objects_key-25"></i></span>
+                        </div>
+                          <input type="password" placeholder="Password" class="form-control"  [(ngModel)]="form.password" standalone="true" name="password"/>
+                          <!-- <div class="alert alert-danger" [hidden]="!error.password">
+                            {{error.password}}
+                          </div> -->
+                      </div>
+                      <div class="input-group form-group-no-border input-lg" [ngClass]="{'input-group-focus':focus1===true}">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="now-ui-icons objects_key-25"></i></span>
+                        </div>
+                          <input type="password" placeholder="Confirm Password" class="form-control"  [(ngModel)]="form.password_confirmation"  standalone="true" name="password_confirmation"/>
+                      </div>
+                    </div>
+                    <div class="footer text-center">
+                        <button class="btn btn-primary btn-round btn-lg btn-block" style="cursor: pointer;"  [disabled]="!signupForm.valid">Get Started</button>
+                    </div>
+                    <h6>
+                        <a (click)="gotoLogin()" class="link"  style="cursor: pointer;" >Go to Login</a>
+                    </h6>
+                </form>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <nav>
+                <ul>
+                    <li>
+                        <a href="">
+                            Creative Tim
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="copyright">
+                &copy;
+              {{data | date: 'yyyy'}}, Designed by
+                <a href="" target="_blank">FullStack Dev Guru</a>. Coded by
+                <a href="" target="_blank">Creative Tim</a>.
+            </div>
+        </div>
+    </footer>
+</div>
